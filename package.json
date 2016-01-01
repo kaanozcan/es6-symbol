@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "es6-symbol",
   "version": "0.0.1",
   "dependencies": {
     "babel-core": "^6.3.26"
