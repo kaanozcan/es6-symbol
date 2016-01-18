@@ -7,7 +7,7 @@ class mySuperCoolyDoolyCollectionLikeThingy{
     var i = 0;
 
     while(this[i] !== undefined){
-      yield this[i];
+      yield this[i] * 2;
       ++i;
     }
   }
@@ -19,5 +19,5 @@ shorterNamePlease[0] = 1;
 shorterNamePlease[1] = 2;
 
 for(let value of shorterNamePlease) {
-  console.log(value); // 1, then 2
+  console.log(value); // 2, then 4
 }
