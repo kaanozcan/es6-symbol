@@ -2,8 +2,8 @@
 
 require("babel-core/register");
 
-var utils = (function (){
-  var inspectSym = Symbol();
+const utils = (function (){
+  let inspectSym = Symbol();
 
   return {
     symbols: {
@@ -19,15 +19,19 @@ var utils = (function (){
   }
 })();
 
-utils.log("sup yo");
+utils.log("sup yo"); //sup yo
 
-var myLogObject = {
+let myLogObject = {
   error: 'Uncaught ReferenceError: mySuperCoolObject is not defined',
   line: 27
 };
 
 myLogObject[utils.symbols.inspect] = function (log){
   return `I got '${log.error}' at line ${log.line}`
+};
+
+myLogObject.inspect = function () {
+  return "This will not be logged";
 };
 
 utils.log(myLogObject);
